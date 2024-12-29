@@ -7,8 +7,7 @@ import tensorflow as tf
 from preprocessing import preprocess
 
 # Load the Keras model from disk
-
-if os.path.exists("Models/ann_model.keras"):
+if os.path.exists("Models/model.sav"):
     import joblib
     model = joblib.load(r"./Models/model.sav")
 else:
