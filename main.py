@@ -1,4 +1,5 @@
 import os
+import numpy as np
 import streamlit as st
 import pandas as pd
 from PIL import Image
@@ -6,17 +7,22 @@ import tensorflow as tf
 from preprocessing import preprocess
 
 # Load the Keras model from disk
-
-model = tf.keras.models.load_model("Models/ann_model.keras")
-
-
-
+if os.path.exists("Models/model.sav"):
+    import joblib
+    model = joblib.load(r"./Models/model.sav")
+else:
+    print("Model file not found")
 
 
 def main():
-    # Setting Application title
-    st.title('Telco Customer Churn Prediction App')
-
+    # Setting application title and logo in the header
+    col1, col2 = st.columns([1, 4])
+# Place the image in the first column
+    with col1:
+        st.image('mini_logo.png', width=100)
+# Place the title in the second column
+    with col2:
+        st.title('Telco Customer Churn Prediction App')
     # Setting Application description
     st.markdown("""
      :iphone:  This Streamlit application is designed to predict customer churn in a fictional telecommunication use case.
@@ -106,7 +112,9 @@ def main():
             if st.button('Predict'):
                 # Get batch prediction
                 predictions = model.predict(preprocess_df)
-                prediction_df = pd.DataFrame(predictions, columns=["Predictions"])
+                # round the probabilities to 0 or 1
+                predictions_label = [1 if x >= 0.5 else 0 for x in predictions]
+                prediction_df = pd.DataFrame(predictions_label, columns=["Predictions"])
                 prediction_df = prediction_df.replace({1: 'Yes, the customer will terminate the service.',
                                                         0: 'No, the customer is happy with Telco Services.'})
 
@@ -116,3 +124,4 @@ def main():
 
 if __name__ == '__main__':
     main()
+
