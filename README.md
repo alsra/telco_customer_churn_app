@@ -1,7 +1,13 @@
 # ![Customer Churn Prediction](app.jpg)
 # Customer Churn Detection App
 
-This web application is designed to predict **customer churn** using an **Artificial Neural Network (ANN)**. Built with **Streamlit**, a Python library for creating interactive web applications, the app provides a user-friendly interface to predict the likelihood of a customer discontinuing their service.
+This web application is designed to predict **customer churn** using an **Artificial Neural Network (ANN)**. Built with **Streamlit**, a Python library for creating interactive web applications, the app provides a user-friendly interface that predicts whether a customer will discontinue their service. It offers a comprehensive solution for both individual and batch predictions, enabling users to analyze churn dynamics effectively.
+
+💡 How to use this app?
+
+Online Predictions: Input customer details to obtain immediate insights into churn likelihood.
+
+Batch Processing: Upload datasets for bulk analysis, facilitating predictions for multiple customers simultaneously.
 
 ### Live Demo:
 Explore the live demo of the application at [Customer Churn Prediction App](https://alsra-customer-churn-prediction-main-i14ob1.streamlit.app).
@@ -9,7 +15,7 @@ Explore the live demo of the application at [Customer Churn Prediction App](http
 ### Overview:
 Customer churn, where customers discontinue their relationship with a business, is a critical issue for companies seeking to improve retention rates. Predicting churn allows businesses to identify at-risk customers and implement retention strategies proactively. 
 
-This app uses a **pre-trained Artificial Neural Network (ANN)** to predict customer churn based on multiple customer-related features such as demographics, usage patterns, and service history.
+This app uses a **pre-trained Artificial Neural Network (ANN)** to predict customer churn based on multiple customer-related features such as demographics, usage patterns, and service history. For more detailed exploratory data analysis and model training, you can view the notebook [here](https://github.com/alsra/telco_customer_churn_app/blob/main/churn_analysis.ipynb).
 
 The dataset used for model training is sourced from IBM's publicly available **Telco Customer Churn dataset**, which can be accessed [here](https://community.ibm.com/community/user/businessanalytics/blogs/steven-macko/2019/07/11/telco-customer-churn-1113).
 
@@ -19,7 +25,10 @@ The dataset used for model training is sourced from IBM's publicly available **T
 
 2. **Model Selection and Evaluation:**
    - In the exploration phase, several models such as **XGBoost** and **Logistic Regression** were evaluated. However, the **ANN (Artificial Neural Network)** outperformed others in terms of the **ROC-AUC score**, making it the most suitable model for churn prediction in this case.
+     ![Output Image](./output.png)
    - **ROC-AUC** is particularly important for evaluating the model's ability to discriminate between churned and non-churned customers, and this ANN model achieved the highest score.
+    ![Accuracy Image]accuracy.png
+
 
 3. **Model Training:**
    - The ANN was trained on the preprocessed data, which includes customer demographics, service usage, and transaction history. The model was designed to handle the complexities of the data and effectively predict churn outcome.
