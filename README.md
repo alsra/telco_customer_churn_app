@@ -27,6 +27,7 @@ The dataset used for model training is sourced from IBM's publicly available **T
    - In the exploration phase, several models such as **XGBoost** and **Logistic Regression** were evaluated. However, the **ANN (Artificial Neural Network)** outperformed others in terms of the **ROC-AUC score**, making it the most suitable model for churn prediction in this case.
      ![Output Image](./output.png)
    - **ROC-AUC** is particularly important for evaluating the model's ability to discriminate between churned and non-churned customers, and this ANN model achieved the highest score.
+     
     ![Accuracy Image](./accuracy.png)
 
 3. **Model Training:**
