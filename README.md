@@ -10,7 +10,7 @@ Online Predictions: Input customer details to obtain immediate insights into chu
 Batch Processing: Upload datasets for bulk analysis, facilitating predictions for multiple customers simultaneously.
 
 ### Live Demo:
-Explore the live demo of the application at [Customer Churn Prediction App](https://alsra-customer-churn-prediction-main-i14ob1.streamlit.app).
+Explore the live demo of the application at [Customer Churn Prediction App](https://customer-churn-prediction-main-i14ob2.streamlit.app).
 
 ### Overview:
 Customer churn, where customers discontinue their relationship with a business, is a critical issue for companies seeking to improve retention rates. Predicting churn allows businesses to identify at-risk customers and implement retention strategies proactively. 
